@@ -1,0 +1,16 @@
+#viewport {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game {
+  width: 1920px;
+  height: 1080px;
+  flex: none;
+  transform-origin: center;
+  background: var(--paper);
+  overflow: hidden;
+}

@@ -1,0 +1,8 @@
+.cast,
+.speaker-cast {
+  width: 640px;
+  height: 1280px;
+  object-fit: contain;
+  object-position: top;
+  clip-path: inset(0 0 755px 0);
+}
