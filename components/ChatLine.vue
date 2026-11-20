@@ -1,5 +1,8 @@
 <script setup lang="ts">
-withDefaults(defineProps<{
+import { computed } from 'vue'
+import { resolveAssetUrl } from '../utils/asset'
+
+const props = withDefaults(defineProps<{
   name: string
   time: string
   text: string
@@ -11,12 +14,14 @@ withDefaults(defineProps<{
   player: false,
   speaker: false,
 })
+
+const avatarSrc = computed(() => resolveAssetUrl(props.avatar))
 </script>
 
 <template>
   <div class="chat-line" :class="{ player, speaker }">
-    <div v-if="avatar" class="chat-avatar">
-      <img :src="avatar" :alt="name">
+    <div v-if="avatarSrc" class="chat-avatar">
+      <img :src="avatarSrc" :alt="name">
     </div>
     <div v-else class="player-plate">你</div>
     <div class="chat-body">

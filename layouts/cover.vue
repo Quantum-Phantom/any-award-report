@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { resolveAssetUrl } from '../utils/asset'
+
 defineProps({
   cast: {
     type: String,
@@ -16,7 +18,7 @@ defineProps({
     <div class="cover-figure">
       <img
         class="cover-cast"
-        :src="cast"
+        :src="resolveAssetUrl(cast)"
         alt="郭校长半身立绘"
         v-motion
         :initial="{ opacity: 0, y: 16 }"

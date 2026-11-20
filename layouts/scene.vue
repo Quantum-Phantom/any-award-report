@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { resolveAssetUrl } from '../utils/asset'
 
 const props = defineProps({
   image: {
@@ -9,7 +10,7 @@ const props = defineProps({
 })
 
 const style = computed(() => ({
-  backgroundImage: `url(${props.image})`,
+  backgroundImage: `url("${resolveAssetUrl(props.image)}")`,
 }))
 </script>
 
