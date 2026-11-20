@@ -1,4 +1,87 @@
 ---
+theme: default
+title: 把公文，做成一出戏
+transition: fade
+mdc: true
+layout: cover
+cast: /assets/people/whole_guoxiaozhang.png
+fonts:
+  sans: Noto Sans SC
+  serif: Noto Serif SC
+  mono: JetBrains Mono
+---
+
+# 把公文，<br>做成一出戏
+
+<div class="cover-sub">
+一个用 <span class="mono">Vue</span> 写的叙事游戏，<br>
+和它背后的七个界面决策。
+</div>
+
+<!-- <div class="cover-meta">
+model-couple-ui · Vue 3.5 · Vite 7<br>
+1920×1080 固定舞台
+</div> -->
+
+<div
+  class="cover-seal"
+  v-motion
+  :initial="{ scale: 1.8, rotate: -30, opacity: 0 }"
+  :enter="{ scale: 1, rotate: 0, opacity: 1, transition: { duration: 320 } }"
+>
+  <Seal text="优秀情侣奖" sub="2026 · 已核阅" :size="125" />
+</div>
+
+<!--
+开场先不自我介绍，先让印章落下来。落完再说第一句：“这不是一次 UI 走查，是七个决策。”
+-->
+
+---
+layout: default
+clicks: 2
+---
+
+# 界面设计
+
+<div class="grid grid-cols-[2fr_2fr] gap-6">
+<div v-click="1">
+<div class="swatch-row">
+  <div class="swatch paper">
+  <strong>纸</strong>
+  <span>#fcfaf9</span>
+  <span>页面底色 · 80%</span>
+  </div>
+  <div class="swatch ink">
+  <strong>墨</strong>
+  <span>#141414</span>
+  <span>结构与文字 · 18%</span>
+  </div>
+  <div class="swatch red">
+  <strong>印</strong>
+  <span>#d0241c</span>
+  <span>权威与批注 · ≤2%</span>
+  </div>
+</div>
+
+<div class="snippet-note" style="margin-top: 12px;"></div>
+
+<Snippet file="tokens.css" :highlight="[[1, 6]]" />
+
+<div class="font-table">
+  <div class="font-row"><span>界面 / 正文</span><div>思源黑体 — 清楚、克制、不抢戏</div></div>
+  <div class="font-row"><span>公文 / 标题</span><div>宋体、仿宋 — <span v-mark.highlight.red="4">公文段落用仿宋</span></div></div>
+  <div class="font-row"><span>编号 / 页码</span><div class="mono">JetBrains Mono — — 03 —</div></div>
+</div>
+
+</div>
+<Stage scale="0.68" size="1440 × 900" style="gap: 9px;margin-top: 14px;" v-click="2" />
+</div>
+
+<!--
+强调“设计稿即代码”——这里的色值是从 src/style.css 里 <<< 引的，演示时改文件幻灯片会变。
+-->
+
+---
 layout: default
 eyebrow: 第一幕 ／ 群聊
 clicks: 3
@@ -253,4 +336,126 @@ clicks: 4
 
 <!--
 这里讲数据隔离——浏览器根本拿不到语气和陈述稿，所以“泄题”在架构上不可能。
+-->
+
+---
+layout: default
+eyebrow: 第五幕 ／ 答辩
+clicks: 4
+---
+
+# 把不可控的 AI，塞进一个可控的流程
+
+<div style="margin-top: 18px;">
+  <Rail :active="$clicks" />
+</div>
+
+<div class="defense-transcript">
+  <div class="transcript-line">
+  <span class="speaker">林一</span>
+  <p style="margin: 0;">我们各自保留自己的朋友和安排。遇到冲突时，先把时间表摊开，再决定谁让一步。</p>
+  </div>
+  <div class="transcript-line" v-click="1">
+  <span class="speaker">钱教授</span>
+  <p style="margin: 0;">如果一方撤回，你们认为评委会应当如何处理已经提交的材料？</p>
+  </div>
+  <div class="transcript-line" v-click="2">
+  <span class="speaker">周澄</span>
+  <p style="margin: 0;">撤回不需要说明私人原因。已经提交的材料应当停止流转，只保留必要的记录。</p>
+  </div>
+</div>
+
+<div style="margin-top: auto;">
+  <div class="defense-controls">
+  <span class="fake-btn">返回审阅</span>
+  <span class="fake-btn" :class="{ disabled: $clicks >= 3 }">仅发表看法</span>
+  <span class="fake-btn" :class="{ disabled: $clicks >= 3 }">跳过</span>
+  <span class="fake-btn primary">提问</span>
+  </div>
+
+  <div class="decision-row" v-click="4">
+  <span>本局裁定</span>
+  <select><option>授予 · 林一 / 周澄</option><option>本届空缺</option></select>
+  <label><input type="checkbox" checked> 确认锁定，不能改判</label>
+  <span class="kicker" style="margin-left: auto;">REVISION / confirmed</span>
+  </div>
+</div>
+
+<!-- <div class="defense-notes">
+  <span>任何时刻只有一个 primary 按钮</span>
+  <span>revision 防并发</span>
+  <span>confirmed 二次确认，判了不能改</span>
+</div> -->
+
+<!--
+克制是刻意的——每一步都必须让玩家看见，而不是被模型抢走。这里可以停顿，让观众读完六个阶段。
+-->
+
+---
+layout: default
+eyebrow: 技术亮点 ／ 存档
+clicks: 5
+---
+
+# 刷新不丢局，改文件不炸档
+
+<div class="save-grid">
+  <div>
+  <div class="between" style="margin-bottom: 7px;">
+  <span class="kicker">localStorage / excellent-couple-v3</span>
+  <span class="kicker">JSON</span>
+  </div>
+  <SaveState :active="$clicks" />
+  <div class="kicker" style="margin-top: 8px;">formal_defense_v1 → 服务端独立行 ／ 键 session_id::couple_id</div>
+  </div>
+
+  <div>
+  <div class="load-rule" :class="{ on: $clicks >= 1 }">
+  <strong>scene 不在 scenes 里 → 重置</strong>
+  <span>新增或删除幕次时，旧档不会把玩家卡在空场景。</span>
+  </div>
+  <div class="load-rule" :class="{ on: $clicks >= 2 }">
+  <strong>selected 过滤掉已失效 id</strong>
+  <span>材料文件换了一批，旧选择不会指向不存在的人。</span>
+  </div>
+  <div class="load-rule" :class="{ on: $clicks >= 3 }">
+  <strong>index 夹紧到 0..n-1</strong>
+  <span>删掉一对候选后，旧存档里的 defense.order 还留着它。</span>
+  </div>
+  <div class="load-rule" :class="{ on: $clicks >= 4 }">
+  <strong>defense 为空 → 退回 review</strong>
+  <span>不给玩家一个没有下一步的答辩页。</span>
+  </div>
+
+  <p v-click="5" class="save-note">
+  load() 是全文件最容易出 bug 的地方，<br>
+  所以它有三重兜底。
+  </p>
+  </div>
+</div>
+
+<!--
+讲一个真实坑——删掉一对候选后，旧存档里 defense.order 还留着那个 id，不夹紧就会白屏。
+-->
+
+---
+layout: bare
+eyebrow: 结束 ／ 请核阅
+---
+
+<div class="end-slide">
+  <div class="end-title">请核阅</div>
+  <div class="mono">
+  <a href="https://github.com/Any-Award/Any-Award-UI" target="_blank" rel="noopener">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+    github.com/Any-Award/Any-Award-UI
+  </a>
+  </div>
+  <div class="end-seal" v-motion :initial="{ scale: 1.6, opacity: 0 }" :enter="{ scale: 1, opacity: 1, transition: { duration: 320 } }">
+  <Seal text="优秀情侣奖" sub="2026 · 已核阅" :size="126" />
+  </div>
+</div>
+
+<!--
+用游戏里的公文语气收尾，和第 1 页闭环。之后不切页，把这一页留在屏幕上。
 -->

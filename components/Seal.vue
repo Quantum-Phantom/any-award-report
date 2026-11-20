@@ -59,7 +59,7 @@ withDefaults(defineProps<{
 }
 .seal-sub {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.46em;
+  font-size: 0.6em;
   letter-spacing: 1px;
   opacity: 0.9;
 }

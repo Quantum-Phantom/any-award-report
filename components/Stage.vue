@@ -59,7 +59,7 @@ withDefaults(defineProps<{
 .browser-title {
   margin-left: 8px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: var(--gray);
 }
@@ -88,7 +88,7 @@ withDefaults(defineProps<{
 .stage-scale {
   margin-top: 5px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
+  font-size: 10px;
   color: var(--red);
 }
 .letterbox {
@@ -96,7 +96,7 @@ withDefaults(defineProps<{
   top: 50%;
   z-index: 2;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 8px;
+  font-size: 10px;
   color: rgba(252, 250, 249, 0.7);
   transform: translateY(-50%);
   opacity: 0;
@@ -117,7 +117,7 @@ withDefaults(defineProps<{
   justify-content: space-between;
   margin-top: 7px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: var(--gray);
 }

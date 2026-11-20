@@ -2,7 +2,7 @@
 defineProps({
   eyebrow: {
     type: String,
-    default: '优秀情侣奖 ／ Vue 前端汇报',
+    default: '',
   },
   rail: {
     type: Boolean,
@@ -18,7 +18,7 @@ defineProps({
 <template>
   <div class="slidev-layout deck">
     <header class="deck-head">
-      <span class="deck-eyebrow">{{ eyebrow }}</span>
+      <span v-if="eyebrow" class="deck-eyebrow">{{ eyebrow }}</span>
       <ProgressRail v-if="rail" :active="active" mini />
     </header>
     <slot />
