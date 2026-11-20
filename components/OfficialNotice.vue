@@ -47,10 +47,10 @@ withDefaults(defineProps<{
   color: var(--ink);
   font-family: 'Noto Serif SC', 'Songti SC', SimSun, serif;
   transition: transform 220ms ease;
-  transform-origin: top center;
+  transform-origin: top left;
 }
 .official-notice.zoom {
-  transform: scale(1.04);
+  transform: scale(1.2);
 }
 .letterhead {
   color: var(--red);

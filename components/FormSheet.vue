@@ -62,9 +62,9 @@ withDefaults(defineProps<{
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 142px;
-  height: 201px;
-  padding: 9px 10px 15px;
+  width: 200px;
+  height: 283px;
+  padding: 13px 14px 21px;
   border: 0.75px solid var(--ink);
   background: var(--paper);
   color: var(--ink);
@@ -72,39 +72,39 @@ withDefaults(defineProps<{
   box-shadow: 0 0 0 2px var(--paper), 0 0 0 2.5px rgba(20, 20, 20, 0.28);
 }
 .form-kicker {
-  font-size: 4px;
+  font-size: 5.5px;
   letter-spacing: 0.6px;
   color: var(--gray);
 }
 .cover-title {
-  margin-top: 10px;
+  margin-top: 14px;
   text-align: center;
 }
 .cover-title span,
 .cover-title small {
   display: block;
-  font-size: 5px;
+  font-size: 7px;
   letter-spacing: 1px;
 }
 .cover-title h2 {
-  margin: 2px 0 3px;
-  font-size: 12px;
+  margin: 3px 0 4px;
+  font-size: 17px;
   line-height: 1.45;
   letter-spacing: 1.4px;
 }
 .cover-fields {
-  margin-top: 8px;
+  margin-top: 11px;
   border-top: 0.75px solid var(--ink);
 }
 .cover-fields div {
   display: grid;
   grid-template-columns: 1fr 1.15fr;
   border-bottom: 0.75px solid var(--ink);
-  font-size: 4.8px;
+  font-size: 6.8px;
   line-height: 3.1;
 }
 .cover-fields span {
-  padding-left: 2px;
+  padding-left: 3px;
   border-right: 0.75px solid var(--ink);
 }
 .cover-fields i {
@@ -112,68 +112,68 @@ withDefaults(defineProps<{
   text-align: center;
 }
 .cover-note {
-  margin-top: 8px;
-  font-size: 4.6px;
+  margin-top: 11px;
+  font-size: 6.5px;
   line-height: 1.65;
 }
 .cover-note b {
   display: block;
-  margin-bottom: 1px;
-  font-size: 5px;
+  margin-bottom: 2px;
+  font-size: 7px;
 }
 .cover-note p {
   margin: 0;
 }
 h2 {
-  margin: 7px 0 5px;
-  font-size: 8px;
+  margin: 10px 0 7px;
+  font-size: 11px;
   letter-spacing: 0.5px;
 }
 .field-row {
   display: grid;
-  grid-template-columns: 30px 1fr;
-  min-height: 8px;
+  grid-template-columns: 42px 1fr;
+  min-height: 11px;
   border-top: 0.6px solid var(--ink);
   border-left: 0.6px solid var(--ink);
-  font-size: 4.5px;
-  line-height: 8px;
+  font-size: 6.3px;
+  line-height: 11px;
 }
 .field-row:last-child {
   border-bottom: 0.6px solid var(--ink);
 }
 .field-row span {
-  padding-left: 2px;
+  padding-left: 3px;
   border-right: 0.6px solid var(--ink);
 }
 .field-row i {
   border-right: 0.6px solid var(--ink);
 }
 .statement {
-  margin-top: 7px;
+  margin-top: 10px;
   border: 0.6px solid var(--ink);
-  padding: 3px;
-  font-size: 4.5px;
+  padding: 4px;
+  font-size: 6.3px;
 }
 .blank-lines {
-  height: 26px;
-  margin-top: 2px;
+  height: 37px;
+  margin-top: 3px;
   border-top: 0.5px solid rgba(20, 20, 20, 0.3);
   background: repeating-linear-gradient(
     to bottom,
     transparent 0,
-    transparent 6px,
-    rgba(20, 20, 20, 0.16) 6px,
-    rgba(20, 20, 20, 0.16) 6.6px
+    transparent 8.5px,
+    rgba(20, 20, 20, 0.16) 8.5px,
+    rgba(20, 20, 20, 0.16) 9.1px
   );
 }
 .footer-note {
   margin-top: auto;
-  font-size: 4.2px;
+  font-size: 6px;
   color: var(--gray);
 }
 .evidence-intro {
-  margin: 2px 0 5px;
-  font-size: 4.4px;
+  margin: 3px 0 7px;
+  font-size: 6.2px;
   line-height: 1.55;
 }
 .evidence-table {
@@ -182,9 +182,9 @@ h2 {
 .evidence-head,
 .evidence-row {
   display: grid;
-  grid-template-columns: 12px 1fr 16px;
-  font-size: 4.2px;
-  line-height: 9px;
+  grid-template-columns: 17px 1fr 22px;
+  font-size: 6px;
+  line-height: 13px;
 }
 .evidence-head {
   border-bottom: 0.6px solid var(--ink);
@@ -205,10 +205,10 @@ h2 {
 .paste-area {
   display: grid;
   place-content: center;
-  height: 66px;
-  margin-top: 7px;
+  height: 93px;
+  margin-top: 10px;
   border: 0.6px dashed var(--ink);
-  font-size: 4.6px;
+  font-size: 6.5px;
   color: var(--gray);
   text-align: center;
 }
@@ -216,9 +216,9 @@ h2 {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 4px;
+  bottom: 6px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 4px;
+  font-size: 5.5px;
   text-align: center;
   color: var(--gray);
 }

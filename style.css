@@ -86,7 +86,7 @@
 
 .kicker {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 8.5px;
+  font-size: 10px;
   letter-spacing: 2.5px;
   color: var(--gray);
 }
@@ -441,7 +441,7 @@
 /* Chat */
 .chat-stage {
   display: grid;
-  grid-template-columns: minmax(0, 1.72fr) minmax(0, 1fr);
+  grid-template-columns: 1fr;
   gap: 22px;
   margin-top: 14px;
 }
@@ -504,6 +504,7 @@
   display: flex;
   flex-direction: column;
   gap: 11px;
+  justify-content: center;
 }
 .note-item {
   position: relative;
@@ -553,13 +554,13 @@
   color: var(--ink);
 }
 .clip-card {
-  width: 228px;
-  padding: 10px 12px;
+  width: 225px;
+  padding: 9px 9px;
   border: 1px solid rgba(252, 250, 249, 0.65);
   background: rgba(20, 20, 20, 0.82);
   color: var(--paper);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.7;
 }
 .clip-card b {
@@ -567,12 +568,16 @@
   font-weight: 400;
 }
 .cast-left,
+.cast-center,
 .cast-right {
   position: absolute;
-  bottom: 138px;
+  top: 122px;
+  bottom: auto;
   width: 356px;
-  height: auto;
-  clip-path: inset(0 0 58.99% 0);
+  height: 292px;
+  object-fit: cover;
+  object-position: top;
+  clip-path: none;
   filter: drop-shadow(0 12px 22px rgba(20, 20, 20, 0.32));
   pointer-events: none;
   transition: opacity 350ms ease, transform 350ms ease;
@@ -580,10 +585,15 @@
 .cast-left {
   left: 44px;
 }
+.cast-center {
+  left: 50%;
+  margin-left: -178px;
+}
 .cast-right {
   right: 54px;
 }
-.cast-left.dim {
+.cast-left.dim,
+.cast-center.dim {
   opacity: 0.55;
   transform: translateX(-16px) scale(0.98);
 }
@@ -618,7 +628,7 @@
   justify-content: space-between;
   margin-top: 7px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 7px;
+  font-size: 9px;
   color: var(--gray);
 }
 
@@ -634,7 +644,7 @@
 }
 .param-row {
   display: grid;
-  grid-template-columns: 98px 1fr;
+  grid-template-columns: 120px 1fr;
   gap: 10px;
   padding: 10px 0;
   border-bottom: 1px solid rgba(20, 20, 20, 0.2);
@@ -642,7 +652,7 @@
 }
 .param-row span:first-child {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 8px;
+  font-size: 10px;
   color: var(--gray);
 }
 .quote {
@@ -735,7 +745,7 @@
 .review-card .meta {
   margin-top: 3px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 7px;
+  font-size: 10px;
   color: var(--gray);
 }
 .review-card dl {
@@ -743,7 +753,7 @@
   grid-template-columns: 34px 1fr 34px 1fr;
   gap: 3px 6px;
   margin: 8px 0 0;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.45;
 }
 .review-card dt {
@@ -754,7 +764,7 @@
 }
 .review-card .statement {
   margin-top: 7px;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.55;
   color: #3f3a34;
 }
@@ -764,7 +774,7 @@
   padding: 6px;
   border: 1px solid var(--ink);
   background: var(--paper);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.5px;
 }
 .review-card.selected button {
@@ -1217,4 +1227,24 @@
   .slidev-layout {
     background: var(--paper) !important;
   }
+}
+
+.form-thumb {
+  transition: opacity 100ms ease;
+}
+
+.form-thumb:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.form-thumb:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.form-thumb:nth-child(3) {
+  transition-delay: 200ms;
+}
+
+.form-thumb:nth-child(4) {
+  transition-delay: 300ms;
 }
