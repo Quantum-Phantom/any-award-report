@@ -304,7 +304,7 @@ clicks: 3
 # 信息很密，但决定只有一个
 
 <div class="review-grid">
-  <article class="review-card" :class="{ selected: $clicks >= 2 }" v-click="1">
+  <article class="review-card" :class="{ selected: $clicks >= 3 }" v-click="1">
   <h3>林一 · 周澄</h3>
   <div class="meta">提交日期 2025-05-03 ／ 游戏内已提交</div>
   <dl>
@@ -316,7 +316,7 @@ clicks: 3
   <div class="statement">
   个人陈述 300 字：我们一起做完跨专业课程展，也各自保留朋友与安排。遇到冲突时，先把时间表摊开，再决定谁让一步……
   </div>
-  <button type="button">{{ $clicks >= 2 ? '取消入围' : '由玩家列入入围名单' }}</button>
+  <button type="button">{{ $clicks >= 3 ? '取消入围' : '由玩家列入入围名单' }}</button>
   </article>
 
   <article class="review-card" v-click="1">
@@ -345,12 +345,12 @@ clicks: 3
   前端拿到的就是这几列。
   </div>
   <div class="boundary-item" v-click="2">
-  <strong>入围是玩家的裁定</strong>
-  委员会不干预。
-  </div>
-  <div class="boundary-item" v-click="3" style="border-bottom: 0;">
   <strong>所以“泄题”在架构上<span style="color: var(--red);">不可能</span></strong>
   浏览器根本拿不到语气和陈述稿。
+  </div>
+  <div class="boundary-item" v-click="3" style="border-bottom: 0;">
+  <strong>入围是玩家的裁定</strong>
+  委员会不干预。
   </div>
 </div>
 
