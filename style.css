@@ -590,7 +590,7 @@
   color: var(--ink);
 }
 .clip-card {
-  width: 225px;
+  width: 230px;
   padding: 9px 9px;
   border: 1px solid rgba(252, 250, 249, 0.65);
   background: rgba(20, 20, 20, 0.82);
