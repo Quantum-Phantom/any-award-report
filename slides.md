@@ -1,6 +1,6 @@
 ---
 theme: default
-title: 把公文，做成一出戏
+title: 优秀情侣奖：把公文，做成一出戏
 transition: fade
 mdc: true
 layout: cover
@@ -11,7 +11,9 @@ fonts:
   mono: JetBrains Mono
 ---
 
-# 把公文，<br>做成一出戏
+# 优秀情侣奖
+
+<div class="cover-subtitle">把公文，做成一出戏</div>
 
 <div class="cover-sub">
 一个用 <span class="mono">Vue</span> 写的叙事游戏，<br>
@@ -116,29 +118,47 @@ clicks: 3
   <div class="note-stack">
 
   <div class="note-item" v-click="2">
+  <img class="avatar" src="/assets/people/thumbnail_zhaofuzhuren.png" alt="赵副主任">
+  <div>
   <b><span style="font-size: 12px;">赵副主任</span></b><br>
   保守 | 理论派 | 负责起草公文 | 看重公平公正公开
   </div>
+  </div>
   <div class="note-item" v-click="2">
+  <img class="avatar" src="/assets/people/thumbnail_qianjiaoshou.png" alt="钱教授">
+  <div>
   <b><span style="font-size: 12px;">钱教授</span></b><br>
   严厉 | 学术派 | 看重评奖的真实性 | 主张可量化的学术标准
   </div>
+  </div>
   <div class="note-item" v-click="2">
+  <img class="avatar" src="/assets/people/thumbnail_sunchuzhang.png" alt="孙处长">
+  <div>
   <b><span style="font-size: 12px;">孙处长</span></b><br>
   亲切 | 学生处处长 | 关心心理健康 | 反对量化与标签化
   </div>
+  </div>
   <div class="note-item" v-click="2">
+  <img class="avatar" src="/assets/people/thumbnail_libuzhang.png" alt="李部长">
+  <div>
   <b><span style="font-size: 12px;">李部长</span></b><br>
   热情 | 宣传部部长 | 关心学校形象 | 看重表现力与话题度
   </div>
+  </div>
   <div class="note-item" v-click="2">
+  <img class="avatar" src="/assets/people/thumbnail_zhouchuzhang.png" alt="周处长">
+  <div>
   <b><span style="font-size: 12px;">周处长</span></b><br>
   平和 | 财务处处长 | 讲原则 | 主张宁缺毋滥
   </div>
+  </div>
   <div style="height: 6px;"></div>
   <div class="note-item" v-click="3">
+  <span class="avatar avatar-plate">你</span>
+  <div>
   <b><span style="font-size: 15px;">吴主任</span></b><br>
   玩家扮演！
+  </div>
   </div>
 </div>
 </div>
@@ -278,7 +298,7 @@ clicks: 1
 ---
 layout: doc
 eyebrow: 第四幕 ／ 审阅
-clicks: 4
+clicks: 3
 ---
 
 # 信息很密，但决定只有一个

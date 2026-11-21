@@ -12,7 +12,7 @@ defineProps({
 <template>
   <div class="slidev-layout cover-deck">
     <div class="cover-copy">
-      <span class="deck-eyebrow">优秀情侣奖 ／ 前端设计汇报</span>
+      <span class="deck-eyebrow">前端设计汇报 ／ 2026 年 11 月 21 日</span>
       <slot />
     </div>
     <div class="cover-figure">
